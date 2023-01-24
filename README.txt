@@ -1,0 +1,1 @@
+This is my class project. Here I will publish my problem solution of Galina Ozerova course https://stepik.org/course/63054/info.
