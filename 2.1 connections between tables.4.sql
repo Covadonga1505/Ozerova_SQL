@@ -6,5 +6,5 @@ CREATE TABLE book21 (
     amount INT, 
     genre_id INT,
     FOREIGN KEY (author_id)  REFERENCES author (author_id) ON DELETE CASCADE,
-    FOREIGN KEY (genre_id)  REFERENCES genre (genre_id)) ON DELETE SET NULL;
+    FOREIGN KEY (genre_id)  REFERENCES genre (genre_id) ON DELETE SET NULL);
 SELECT*FROM book21;
