@@ -1,3 +1,14 @@
+DROP TABLE enrollee_achievement;
+DROP TABLE program_subject;
+DROP TABLE program_enrollee;
+DROP TABLE enrollee_subject;
+DROP TABLE program;
+DROP TABLE department;
+DROP TABLE subject;
+DROP TABLE enrollee;
+DROP TABLE achievement;
+
+
 CREATE TABLE department(
 department_id INT PRIMARY KEY AUTO_INCREMENT,
 name_department VARCHAR(30));
