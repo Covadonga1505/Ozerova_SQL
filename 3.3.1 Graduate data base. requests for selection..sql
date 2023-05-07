@@ -24,7 +24,7 @@ CREATE TABLE program(
 program_id INT PRIMARY KEY AUTO_INCREMENT,
 name_program VARCHAR(50),
 department_id INT,
-FOREIGN KEY(department_id) REFERENCES department(department_id),
+FOREIGN KEY(department_id) REFERENCES department(department_id) ON DELETE CASCADE,
 plan INT);
 INSERT program(name_program, department_id, plan)
 VALUES
@@ -65,9 +65,9 @@ SELECT*FROM achievement;
 CREATE TABLE enrollee_achievement(
 enrollee_achievement_id INT PRIMARY KEY AUTO_INCREMENT,
 enrollee_id INT,
-FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id),
+FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id) ON DELETE CASCADE,
 achievement_id INT,
-FOREIGN KEY(achievement_id) REFERENCES achievement(achievement_id));
+FOREIGN KEY(achievement_id) REFERENCES achievement(achievement_id) ON DELETE CASCADE);
 INSERT enrollee_achievement(enrollee_id, achievement_id)
 VALUES
 ('1','2'),
@@ -82,9 +82,9 @@ SELECT*FROM enrollee_achievement;
 CREATE TABLE program_subject(
 program_subject_id INT PRIMARY KEY AUTO_INCREMENT,
 program_id INT,
-FOREIGN KEY(program_id) REFERENCES program(program_id),
+FOREIGN KEY(program_id) REFERENCES program(program_id) ON DELETE CASCADE,
 subject_id INT,
-FOREIGN KEY(subject_id) REFERENCES subject(subject_id),
+FOREIGN KEY(subject_id) REFERENCES subject(subject_id) ON DELETE CASCADE,
 min_result INT);
 INSERT program_subject(program_id, subject_id, min_result)
 VALUES
@@ -106,9 +106,9 @@ SELECT*FROM program_subject;
 CREATE TABLE program_enrollee(
 program_enrollee_id INT PRIMARY KEY AUTO_INCREMENT,
 program_id INT,
-FOREIGN KEY(program_id) REFERENCES program(program_id),
+FOREIGN KEY(program_id) REFERENCES program(program_id) ON DELETE CASCADE,
 enrollee_id INT,
-FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id));
+FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id) ON DELETE CASCADE);
 INSERT program_enrollee(program_id, enrollee_id)
 VALUES
 ('3','1'),
@@ -131,9 +131,9 @@ SELECT*FROM program_enrollee;
 CREATE TABLE enrollee_subject(
 enrollee_subject_id INT PRIMARY KEY AUTO_INCREMENT,
 enrollee_id INT,
-FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id),
+FOREIGN KEY(enrollee_id) REFERENCES enrollee(enrollee_id) ON DELETE CASCADE,
 subject_id INT,
-FOREIGN KEY(subject_id) REFERENCES subject(subject_id),
+FOREIGN KEY(subject_id) REFERENCES subject(subject_id) ON DELETE CASCADE,
 result INT);
 INSERT enrollee_subject(enrollee_id, subject_id, result)
 VALUES
